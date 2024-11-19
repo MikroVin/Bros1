@@ -1,5 +1,6 @@
 <?php
-
+require "modules/dd.php";
+require "modules/filter.php";
 $banner = "Home";
 
 $books = [
@@ -20,14 +21,5 @@ $books = [
     ]
 ];
 
-$filter = function($items, $key, $value) {
-    $filtered = [];
-    foreach ($items as $item) {
-        if ($item[$key] === $value) {
-            $filtered[] = $item;
-        }
-    }
-    return $filtered;
-};
 
 require 'views/index.view.php';
